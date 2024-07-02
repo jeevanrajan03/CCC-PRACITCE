@@ -13,11 +13,12 @@
 <!-- 
     SELECTORS
 
-    1. Simple Selector
-    2. Combination Selector
+    1. Simple Selector (#,.,*)
+    2. Combination Selector (<,>,+,~)
     3. Pseudo Element Selector
     4. Pseudo Class Selector
     5. Attribute Selector
+    https://www.w3schools.com/css/css_selectors.asp - Use this Link to read further about css selectors to get a clear view
   -->
 
 <!-- 
@@ -45,8 +46,21 @@
             color: black;
         }
 
-        body {
+        div {
+            /*This Property adds color to the background*/
             background-color: rgb(105, 176, 239);
+            /*This Property is used to add images to the background*/
+            background-image: url(peacock.jpeg);
+            /*This Property is used to avoid the repeatation among the images in the background*/
+            background-repeat: no-repeat;
+            /* This Property allows us to position the image in the web page anywhere */
+            background-position: bottom;
+            /* Used to apply border among the elements, using this we can give border thickness, color */
+            border: solid black;
+            border-radius: 10px;
+            /* You can assign all the value with the single property named as property */
+            /* In This example, I've given background-color, background-image, background-repeat, background-position in a single line using background property */
+            background: yellowgreen url(peacock.jpeg) no-repeat right;
         }
 
         /* Examples for Class Selector (.) */
@@ -58,7 +72,7 @@
 
         /* To apply different css for a particular tag used dot operator along with the tag */
         p.abc {
-            color: red;
+            color: pink;
             font-weight: bold;
         }
 
@@ -66,7 +80,66 @@
         /* Examples for Id Selector (#) */
         /* HTML file can have distinct ids to access the tag, the id is an attribute which is given inside the tag with the unique name */
         #a {
-            color: red;
+            color: pink;
+        }
+
+        /* BORDER */
+        a {
+            /* Used to specify the style of the border */
+            border-style: dashed;
+            /* used to give size to the border */
+            border-width: 6px;
+            /* Used to soecify the color to the border */
+            border-color: rebeccapurple;
+            /* Used to give round corners to the border */
+            border-radius: 6px;
+            /* border can be specified in a shortcut way in which width, style and color is applied in a single line*/
+            /* Also you can specify thing for a particular direction using the left right bottom and top by using syntax border-left, border-right, border-top, border-bottom */
+            border: 3px solid black;
+        }
+
+        /* MARGIN & PADDING*/
+        /* MARGIN - It is the space between the outer and the border. Here the width and height will not change */
+        /* PADDING - It is the space between the border and content. Here the width and height will change*/
+        /* PADDING & MARGIN can be used in a single line by specifying the values as TOP, RIGHT, BOTTOM, LEFT */
+        #cde {
+            background-color: rgb(155, 95, 211);
+            background-image: none;
+            margin: 50px 30px 70px 30px;
+            padding: 5px;
+            height: 150px;
+            /*Max-Width and Max-Height are used to design a responsive web page where the screen cannot be scrolled after the limit of the px is fixed*/
+            max-width: 200px;
+            /* Outline is appeared above the border if it is sepcified */
+            outline: 3px solid red;
+
+
+            p {
+                font-family: 'Times New Roman';
+                font-size: 20px;
+                font-weight: bold;
+                color: rgb(8, 0, 0);
+            }
+
+
+        }
+
+        /* TEXT DECORATION */
+        /* Text decoration is the prooperty used to beautify the texts in the html page */
+        /* Text transform is the property which plays with various cases of the word like uppercase, lowercase and capitalize */
+        /* color is the property which is used to give color only to the text */
+        /* letter spacing: provides space inbetween letters*/
+        /* word spacing: provides space inbetween words */
+        /* text shadow: this gives the shadow look behind the texts */
+        /* font style: this gives the changes to the fonts with italic or oblique */
+        h3 {
+            text-decoration: overline underline dotted;
+            text-align: center;
+            text-transform: uppercase;
+            color: black;
+            letter-spacing: 2px;
+            text-shadow: 1px 2px 3px blue;
+            font-style: italic;
         }
     </style>
 
@@ -77,22 +150,42 @@
 </head>
 
 <body>
+    <div>
+        <!-- INLINE CSS -->
+        <!-- SYNTAX <tag style="properties: value;"> -->
+        <!-- semicolon is mandatory between properties (;) -->
+        <p style="background-color: aqua; color: black;font-weight: bold;text-align: center;">CSS EXAMPLES
+        </p>
+        <hr>
 
-    <!-- INLINE CSS -->
-    <!-- SYNTAX <tag style="properties: value;"> -->
-    <!-- semicolon is mandatory between properties (;) -->
-    <p style="background-color: aqua; color: black;font-weight: bold;text-align: center;">Example for Inline Example</p>
-    <hr>
 
+        <h1 class="abc">This is an Example for External CSS</h1>
+        <h2 id="a">This is an Example for External CSS</h4>
+            <h3>This is an Example for External CSS</h4>
+                <h4>This is an Example for External CSS</h4>
+                <h5>This is an Example for External CSS</h5>
+                <h6 class="abc">This is an Example for External CSS</h6>
+                <p class="abc"> Hello World</p>
+    </div>
+    <br><br>
+    <div id="cde">
+        <center>
+            <p>
+                Hello World
+            </p>
+            <p>
+                Hello World
+            </p>
+            <p>
+                Hello World
+            </p>
+        </center>
+    </div>
 
-    <h1 class="abc">This is an Example for External CSS</h1>
-    <h2 id="a">This is an Example for External CSS</h4>
-        <h3>This is an Example for External CSS</h4>
-            <h4>This is an Example for External CSS</h4>
-            <h5>This is an Example for External CSS</h5>
-            <h6 class="abc">This is an Example for External CSS</h6>
-            <p class="abc"> Hello World</p>
-
+    <h3>Hello World</h3>
+    <br><br>
+    <!-- Creating Empty Link Using Anchor Tag -->
+    <center><a href="#"> Hello World</a></center>
 </body>
 
 </html>
