@@ -15,8 +15,8 @@
 
     1. Simple Selector (#,.,*)
     2. Combination Selector (<,>,+,~)
-    3. Pseudo Element Selector
-    4. Pseudo Class Selector
+    3. Pseudo Element Selector (::)
+    4. Pseudo Class Selector (:)
     5. Attribute Selector
     https://www.w3schools.com/css/css_selectors.asp - Use this Link to read further about css selectors to get a clear view
   -->
@@ -132,7 +132,7 @@
         /* word spacing: provides space inbetween words */
         /* text shadow: this gives the shadow look behind the texts */
         /* font style: this gives the changes to the fonts with italic or oblique */
-        h3 {
+        #font {
             text-decoration: overline underline dotted;
             text-align: center;
             text-transform: uppercase;
@@ -140,6 +140,54 @@
             letter-spacing: 2px;
             text-shadow: 1px 2px 3px blue;
             font-style: italic;
+            font-size: 40px;
+        }
+
+        /* LINK STYLING*/
+        a:hover {
+            color: black;
+            text-shadow: 1px 2px 3px black;
+        }
+
+        a:link {
+            color: pink;
+        }
+
+        a:active {
+            color: cyan;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        /* Similar to border we are having box shadow, which is regularly used in drop downs */
+        /* Atleast two values must be given */
+        #ref {
+            box-shadow: 1px 2px blue;
+        }
+
+        /* STYLING FOR TABLE */
+        table,
+        td,
+        th {
+            border: 2px solid red;
+            border-collapse: collapse;
+        }
+
+        tr:nth-child(odd) {
+            background-color: aqua;
+        }
+
+        tr:hover {
+            background-color: pink;
+        }
+
+        /* STYLING FOR IMAGING */
+        img {
+            height: 200px;
+            width: 200px;
+            display: inline;
         }
     </style>
 
@@ -162,8 +210,10 @@
         <h1 class="abc">This is an Example for External CSS</h1>
         <h2 id="a">This is an Example for External CSS</h4>
             <h3>This is an Example for External CSS</h4>
+
+                <!-- Emojis can be specified using & with the starting number 128500 -->
                 <h4>This is an Example for External CSS</h4>
-                <h5>This is an Example for External CSS</h5>
+                <h5>This is an Example for External CSS &#128520</h5>
                 <h6 class="abc">This is an Example for External CSS</h6>
                 <p class="abc"> Hello World</p>
     </div>
@@ -182,10 +232,37 @@
         </center>
     </div>
 
-    <h3>Hello World</h3>
+    <h3 id="font">Hello World</h3>
     <br><br>
     <!-- Creating Empty Link Using Anchor Tag -->
     <center><a href="#"> Hello World</a></center>
+    <br><br>
+    <center><a id="ref" href="#"> Hello SRM</a></center>
+    <br><br>
+    <table>
+
+        <th>S.NO</th>
+        <th>Name</th>
+        <th>Register Number</th>
+
+        <tr>
+            <td>1</td>
+            <td>Jeevan Rajan</td>
+            <td>310621205038</td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Benedict</td>
+            <td>310621205016</td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td>Imman Raj</td>
+            <td>310621205033</td>
+        </tr>
+    </table>
 </body>
 
 </html>
