@@ -1,0 +1,338 @@
+<!-- DAY 1 CCC HTML NOTES -->
+
+<!-- 
+HTML - HYPERTEXT MARKUP LANGUAGE
+CSS - CASCADING STYLING SHEETS
+JS - JAVA SCRIPT
+MERN - MONGO DB, EXPRESSJS, REACT JS, NODE JS
+MEAN - MONGO DB, EXPRESSJS, ANGULARJS, NODE JS 
+-->
+
+<!DOCTYPE html>
+
+<!-- Defining the language en for english fr for french -->
+<html lang="en">
+
+<head>
+
+    <!-- Meta data- data about an data -->
+    <meta charset="UTF-8">
+
+    <!-- This line is used for responsive web pages -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- favicon is the icon used to display in the title along with the title name -->
+    <link rel="icon" href="Faviicon.ico">
+    <!-- Title tag used in the browser -->
+    <title>Practice</title>
+</head>
+
+<body>
+    <!-- Paragraph tag - this tag doesn't consider extra white spaces including new line -->
+    <p>PARAGRAPH</p>
+
+    <!-- Quote tag -->
+    <q>QUOTE</q>
+
+    <!-- Giving title to paragraph title is an attribute here -->
+    <p title="HTML Practice">TITLE</p>
+
+    <!-- Bi Directional override -->
+    <bdo dir="rtl">BI DIRECTIONAL OVERRIDE</bdo>
+
+    <!-- Abbreviation tag -->
+    <p><abbr title="World Wide Web">WWW</abbr></p>
+
+    <!-- Right justify -->
+    <p dir="rtl">RIGHT JUSTIFY</p>
+
+    <!-- Left Justify -->
+    <p dir="ltr">LEFT JUSTIFY</p>
+
+    <!-- the content of the p tag can be edited -->
+    <p contenteditable="true">CONTENT EDITABLE</p>
+
+    <!-- pre formatted tag - this tag consider all the white spaces including a new line -->
+    <pre>
+        hello 
+        world
+        hello world
+    </pre>
+
+    <!-- quoting in a block lorem25 - 25 words -->
+    <blockquote> BLOCKQUOTE - Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio obcaecati totam
+        molestias modi.
+        Ullam quisquam aperiam atque a enim? Nihil autem corrupti nulla nobis et.</blockquote>
+    <hr>
+    <!-- bold -->
+    <b>BOLD</b>
+
+    <!-- italic -->
+    <i>ITALIC</i>
+
+    <!-- strong - same as bold -->
+    <strong>STRONG</strong>
+
+    <!-- highlighted text -->
+    <mark>MARK</mark>
+
+    <!-- line in between text -->
+    <del>DEL</del>
+
+    <!-- emphasis tag same as italic -->
+    <em>EMPHASIS</em>
+
+    <!-- underline tag -->
+    <ins>INS</ins>
+
+    <!-- used to raise for powers -->
+    10<sup>x</sup>
+
+    <!-- underline tag -->
+    <u>UNDERLINE</u>
+
+    <!-- horizontal rule -->
+    <hr>
+
+    <!-- line break -->
+    <br>
+
+
+    <!-- TABLE NOTES -->
+    <!-- 
+    th - table head which is default bold
+    tr - table row
+    td - table data used to insert value inside the table row 
+    caption - gives the heading for the table
+    By default the border will not come, we have to include the border using css - Cascading Style Sheets
+    -->
+
+    <!-- 
+    rowspan - used to combine the row SYNTAX: <td rowspan="2"></td>
+    colspan - used to combine the column SYNTAX: <td colspan="2"></td>
+    -->
+
+    <table id="example">
+        <caption style="font-weight: bold; color: red; font-size: 20px;">Student Details</caption>
+        <th id="tableheader">S.NO</th>
+        <th id="tableheader">Name</th>
+        <th id="tableheader">Register Number</th>
+
+        <tr>
+            <td id="tableheader">1</td>
+            <td id="tableheader">Jeevan Rajan</td>
+            <td id="tableheader">310621205038</td>
+        </tr>
+
+        <tr>
+            <td id="tableheader">2</td>
+            <td id="tableheader">Benedict</td>
+            <td id="tableheader">310621205016</td>
+        </tr>
+
+        <tr>
+            <td id="tableheader">3</td>
+            <td id="tableheader">Imman Raj</td>
+            <td id="tableheader">310621205033</td>
+        </tr>
+    </table>
+    <hr>
+
+    <!-- IMAGES -->
+    <!-- While working with the image it is very useful when we have a image folder in the same directory so that we can use the relative path which is easy -->
+    <!-- 
+        img - image tag
+        src - source to the image(path)
+        alt - alternate text when the image is not there
+        height & width -  used to resize the image
+        it is always recommendable to work with the css instead of using height and width
+        you can also specify the link address of the image from online 
+     -->
+    <img src="images/peacock.jpeg" alt="Friends photo" height="200" width="200">
+    <hr>
+
+    <!-- ANCHOR TAG-->
+    <!-- Anchor tag is used to specify the links in the web page so that it can navigate to some other places also -->
+    <!-- href is an attribute inside the anchor tag (HREF - HYPERTEXT REFERENCE) where we can specify links or addresses -->
+    <!-- 
+    target attribute is used to specify where the new page have to be loaded which contains many values like blank, parent, etc 
+    By default it is _self, _blank opens new tab
+    -->
+    <!-- By default the color of the anchor tag will be blue-->
+    <a href="https://www.gmail.com" target="_blank">GMAIL</a>
+    <hr>
+
+    <!-- LISTS -->
+    <!-- 
+        1. ORDERED LIST - <ol>
+        2. UNORDERED LIST - <ul>
+
+        SKELETON:
+
+        <list>
+            <ol>
+                <li></li>
+            </ol>
+        </list>
+     -->
+
+    <list>
+        <!-- Ordered List -->
+        <!-- start attribute can be used for number to be appear first and followed by series it is applicable only for numbers -->
+        <ol type="1" start="10">
+            <li>orange</li>
+            <li>apple</li>
+        </ol>
+
+        <!-- Unordered List -->
+        <!-- Using type attribute we can change the style of the bulletin -->
+        <ul type="circle">
+            <li>hello</li>
+            <li>world</li>
+        </ul>
+    </list>
+    <hr>
+    <!-- FORMS -->
+    <!-- 
+        action - it is an attribute which is called when the form is submitted
+        here we will be using various button such as check, radio, textfield, input, password, number, date
+     -->
+
+    <!--
+        GET Method: Display all the data in the browser
+        POST Method: Doesn't Display the data
+     -->
+
+    <!-- 
+        type="text" - used for inputting text
+        type="radio" - used to select one option
+        type="checkbox" - used to select multiple option
+        type="email" - used to input email address
+        type="password" - obscure text
+        type="submit" - used to submit the form
+        type="reset" - used to reset the form
+        type="date" - used to give dates
+        type="number" - used to input numbers with dropdown
+        <select> tag is used for dropdown list with <option> tag inside
+    -->
+
+    <form action="dummy.html" method="post">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" />
+
+        <label for="pwd">Password:</label>
+        <input type="password" name="pwd" id="pwd" />
+
+        <input type="submit" name="sub" value="Login" />
+    </form>
+
+    <hr>
+
+    <!-- FORM USING TABLE -->
+    <center>
+        <form action="dummy.html" method="get">
+            <table>
+                <tr>
+                    <td><label>First Name</label></td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td><label>Last Name</label></td>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <td><label>Mail ID</label></td>
+                    <td><input type="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="phno">Phone</label></td>
+                    <td><input type="number" min="1" max="100" name="phno"></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input type=" password" required minlength="8" maxlength="10"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label></td>
+
+                    <td>
+                        <input type="radio" name="gender">Male</input>
+                        <input type="radio" name="gender">Female</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dob">DOB</label></td>
+                    <td><input type="date" name="dob"></td>
+                </tr>
+                <tr>
+                    <td><label for="sub">Subject</label></td>
+                    <td>
+                        <input type="checkbox" name="sub">Maths</input>
+                        <input type="checkbox" name="sub">Tamil</input>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dept">Department</label></td>
+                    <td>
+                        <select name="dept">
+                            <option>IT</option>
+                            <option>CSE</option>
+                            <option>ECE</option>
+                            <option>EEE</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" value="submit">
+                        <input type="reset">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+    <hr>
+
+    <!-- DIVISION  TAG -->
+    <!-- <div> tag is used to create or group elements within the division, there can be multiple division. division is also used for formatting html forms -->
+    <!-- div will be used efficiently with css -->
+    <div>
+        <label for="name">Name</label>
+        <input type="text" name="name">
+    </div><br>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password">
+    </div><br>
+
+    <!-- onclick is an js element used inside the tag to use js functions when submit button is clicked and alert is the function used to display the dialog box with message -->
+    <div onclick="alert('Hello')">
+        <input type="submit" value="submit">
+    </div>
+    <hr>
+
+    <!-- SPAN TAG -->
+    <!-- the span element is used to seperate the text between text for styling and funtioning -->
+    <!-- It is an Inline Tag -->
+    <p> This is <span style="color: red; font-weight: bold;">Jeevan Rajan</span> from Chennai</p>
+    <hr>
+
+
+
+</body>
+
+</html>
+
+<!-- 
+INLINE CSS FOR BODY BACKGROUND COLOR
+<body bgcolor="pink"> <body>
+-->
+
+<!-- internal Css can be used with the help of style tag -->
+<style>
+    #example,
+    #tableheader,
+    #tabledata {
+        border: 1px solid black;
+    }
+</style>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Page</title>
+</head>
+
+<body>
+    <h3>Sign Up Page</h3>
+    <center>
+        <form action="homePage.html" method="post">
+
+
+            <table>
+                <tr>
+                    <td><label for="name">Name</td>
+                    <td><input type="text" required="true" name="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">Password</td>
+                    <td><input type="password" required="true" name="pwd" min="8" max="10"></td>
+                </tr>
+                <tr>
+                    <td><label for="phno">Phone</td>
+                    <td><input type="number" name="phno" required="true" min=1 max=99></td>
+                </tr>
+                <tr>
+                    <td><label for="Email">Email</td>
+                    <td><input type="email" required="true" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</td>
+                    <td>
+                        <input type="radio" name="gender" required="true">Male</input>
+                        <input type="radio" name="gender" required="true">Female</input>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                    <td><input type="reset" value="Reset"></td>
+                </tr>
+
+
+            </table>
+
+
+        </form>
+    </center>
+</body>
+
+</html>

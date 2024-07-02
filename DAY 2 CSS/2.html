@@ -1,0 +1,98 @@
+<!-- DAY 2 CSS CCC TRAINING -->
+<!-- 
+    3 TYPES OF CSS
+    *INLINE (Using style attribute inside the tag)
+    *INTERNAL (Using <style> tag in the same html file)
+    *EXTERNAL (Using a seperate .css file by linking it with the html file)
+
+    Highest priority will be for inline css
+    second priority will be for internal and external
+    last priority will be with the browser default
+ -->
+
+<!-- 
+    SELECTORS
+
+    1. Simple Selector
+    2. Combination Selector
+    3. Pseudo Element Selector
+    4. Pseudo Class Selector
+    5. Attribute Selector
+  -->
+
+<!-- 
+    The Browser hidden Styles are override by the CSS properties
+   -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS EXAMPLES</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        /* Global Style can be done using (*) */
+        * {
+            color: blue;
+        }
+
+        /* To apply CSS for multiple tag, use (,) */
+        h1,
+        p {
+            color: black;
+        }
+
+        body {
+            background-color: rgb(105, 176, 239);
+        }
+
+        /* Examples for Class Selector (.) */
+        /* Class Selector can be used when the class attribute is used inside the html tag */
+        /* Dot operator is used along with the class name to apply css for all the class name contains abc */
+        .abc {
+            color: aqua;
+        }
+
+        /* To apply different css for a particular tag used dot operator along with the tag */
+        p.abc {
+            color: red;
+            font-weight: bold;
+        }
+
+
+        /* Examples for Id Selector (#) */
+        /* HTML file can have distinct ids to access the tag, the id is an attribute which is given inside the tag with the unique name */
+        #a {
+            color: red;
+        }
+    </style>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="2.css">
+
+
+</head>
+
+<body>
+
+    <!-- INLINE CSS -->
+    <!-- SYNTAX <tag style="properties: value;"> -->
+    <!-- semicolon is mandatory between properties (;) -->
+    <p style="background-color: aqua; color: black;font-weight: bold;text-align: center;">Example for Inline Example</p>
+    <hr>
+
+
+    <h1 class="abc">This is an Example for External CSS</h1>
+    <h2 id="a">This is an Example for External CSS</h4>
+        <h3>This is an Example for External CSS</h4>
+            <h4>This is an Example for External CSS</h4>
+            <h5>This is an Example for External CSS</h5>
+            <h6 class="abc">This is an Example for External CSS</h6>
+            <p class="abc"> Hello World</p>
+
+</body>
+
+</html>
