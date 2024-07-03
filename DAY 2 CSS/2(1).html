@@ -3,6 +3,9 @@
 <!-- The default overflow value is visible, if overflow occurs it is explicitily visible -->
 <!-- CSS DISPLAY PROPERTY -->
 <!-- https://www.w3schools.com/cssref/pr_class_display.php -->
+<!-- Combiantional Classes -->
+<!-- ~ is used to apply css for all the sibling tags -->
+<!-- + is used to apply css for the next sibling tags-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,7 @@
     <title>CSS EXAMPLES 2</title>
     <style>
         div {
-            border: 3px solid red;
+            /* border: 3px solid red; */
             margin: 15px;
             padding: 5px;
             width: 500px;
@@ -38,7 +41,6 @@
             height: 100px;
             width: 200px;
 
-
             li {
                 /* This property considers all the element in one block */
                 /* You can also specify flex which is same as block */
@@ -57,6 +59,7 @@
                 width: 100px;
                 /* opacity is the stying property which is used to reduce the darkness of any element */
                 opacity: 0.5;
+
             }
 
             p {
@@ -77,6 +80,7 @@
         /* To avoid overflow we can use the property overflow which as many function like scrolling */
         #over {
             overflow: auto;
+            text-align: justify;
         }
 
         /* Relative Width and height to the images */
@@ -90,12 +94,73 @@
             }
 
         }
+
+        /* Styling for many divs */
+        /* z-index is used to stack the element, using position only we can use z-index */
+        #main {
+            border: none;
+            height: 300px;
+            width: 200px;
+            border: 3px solid aquamarine;
+            position: relative;
+        }
+
+        #a {
+            position: absolute;
+            height: 50px;
+            width: 100%;
+            border: none;
+            top: 20px;
+            z-index: 2;
+        }
+
+        #b {
+            position: absolute;
+            border: 1px solid green;
+            background-color: cadetblue;
+            height: auto;
+            width: 50px;
+            top: 15px;
+            left: 15px;
+            z-index: 1;
+        }
+
+        #c {
+            position: absolute;
+            border: 1px solid green;
+            background-color: burlywood;
+            height: auto;
+            width: 50px;
+            top: 15px;
+            right: 15px;
+            z-index: 3;
+        }
+
+        /* Float operation, we can fix the image in either left or right so that the text will not overlap on the image */
+        #main2 {
+            img {
+                float: left;
+                margin: 5px;
+                height: 100px;
+            }
+        }
+
+        /* Pseudo class used to apply css for particular elememts using double colon (::) */
+        #xyz {
+            border: 1px solid red;
+
+            p::first-line {
+                color: blue;
+            }
+        }
     </style>
 </head>
 
 <body>
     <h1>CSS WORLD</h1>
     <div>
+        +
+        33
         <h1>
             Hello World
         </h1>
@@ -119,30 +184,48 @@
     </div>
     <p id="hid"> This is Jeevan</p>
     <div id="over">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas perspiciatis vero incidunt cumque tenetur
-            voluptate! Iusto doloremque consectetur praesentium at natus ipsa numquam impedit laudantium totam minima,
-            explicabo, facilis deleniti non beatae cum fuga suscipit? Dolore quisquam pariatur distinctio, corporis
-            repellendus fuga. Praesentium animi incidunt quas, mollitia cumque autem maiores sapiente dolores omnis ea
-            quaerat ad vero eos a libero voluptates modi reprehenderit doloribus maxime laborum consequatur est amet
-            neque? Repudiandae soluta vel corrupti a tempora velit ab vitae nulla quibusdam recusandae explicabo, saepe
-            labore ea mollitia autem provident asperiores sed neque nostrum laborum molestiae et, error fugiat. Soluta
-            veniam possimus repellendus repellat, praesentium iure tenetur perspiciatis quasi. Sequi numquam, excepturi
-            esse quos quia mollitia ea quaerat deleniti quae distinctio dignissimos doloribus ex dolor in ratione a iste
-            deserunt nobis harum saepe. Quis sunt aliquam similique. Fugiat dolores at optio, veniam aliquid voluptatum
-            amet asperiores rerum libero tempora dolor. Id, enim quia quae, adipisci nostrum vero eligendi in alias
-            dolores quibusdam fuga earum ipsa deleniti porro accusantium iure atque nobis, veniam autem minima nesciunt.
-            Dolorum hic, accusantium officiis libero est dolores amet, cum fugiat ad optio impedit incidunt totam
-            quaerat commodi voluptatibus reiciendis ipsa, dolore omnis? Dolore enim labore vel obcaecati similique
-            aliquam velit non illo voluptatibus, illum magni reiciendis. Illo harum rerum eaque, molestias corrupti eum
-            et quaerat reiciendis sit dicta vero recusandae libero, nostrum, fugit deleniti quos voluptas. Eaque
-            excepturi ipsam, sunt earum magni fuga sapiente recusandae molestiae delectus dicta esse animi harum saepe,
-            omnis quod natus hic nobis necessitatibus accusamus suscipit! Nobis perspiciatis a eos voluptates libero,
-            iure ducimus fuga officia repudiandae saepe! Minima eligendi, reiciendis culpa, dolorem excepturi cumque
-            architecto deserunt maiores animi eius obcaecati! Omnis ratione repudiandae vero officia ad non debitis
-            reprehenderit eaque numquam, veniam a magni minus ab iusto corrupti laborum eum! Modi.++</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sequi iste nobis quod qui, facere facilis. Ea
+            magni iusto facilis temporibus totam incidunt est labore maxime deserunt ipsam! Voluptates deserunt rerum
+            maiores iusto, hic suscipit impedit ut voluptatibus architecto distinctio perspiciatis consequuntur
+            explicabo laudantium dicta obcaecati quidem delectus sapiente aut magnam ex veniam fugiat repellat? Unde
+            magnam repellendus et, adipisci esse, quo atque eligendi inventore id excepturi incidunt fuga perspiciatis
+            consectetur ab. Alias minima beatae blanditiis. Tempora mollitia ab maiores dolor ad, nam ea maxime labore
+            molestiae amet nobis, necessitatibus aspernatur nisi totam possimus voluptate natus eligendi dolores esse
+            provident.</p>
     </div>
     <div id="pic">
         <img src="peacock.jpeg" alt="peacock">
+    </div>
+    <div id="main">
+        <div id="a">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem itaque sint iusto aut unde accusamus
+                quae in cumque rerum consectetur.</p>
+        </div>
+        <div id="b">
+            <p>One</p>
+        </div>
+        <div id="c">
+            <p>Two</p>
+        </div>
+    </div>
+
+
+    <div>
+        <div id="main2">
+            <img src="peacock.jpeg" alt="Not Found">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sapiente suscipit quo aliquid mollitia
+                dolorem tempore iure dolorum, quae dolore!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni vel tempora aliquam sequi recusandae neque
+                iusto culpa officiis omnis. Fuga.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, iste. At, ea ipsam? Architecto dolor
+                velit corporis eligendi neque fuga?</p>
+        </div>
+    </div>
+
+    <div id="xyz">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam quibusdam at, ipsa aperiam adipisci autem
+            architecto iusto perspiciatis assumenda, ad dolorem libero rerum optio facere laboriosam non quod quia.
+            Dicta!</p>
     </div>
 </body>
 
