@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Example</title>
+    <style>
+        #main {
+            display: inline-block;
+        }
+
+        #dlist p {
+            display: none;
+            box-shadow: 1px 3px 1px 3px red;
+            width: 100px;
+            height: 50px;
+            padding: 7px;
+            z-index: 1;
+            position: absolute;
+            top: 50px;
+        }
+
+        span {
+            border: 1px solid black;
+            width: 100px;
+            height: 50px;
+            padding: 7px;
+
+        }
+
+        #main:hover p {
+            display: block;
+            background-color: beige;
+            color: black;
+        }
+
+        /* Creating Horizontal Navigation Bar */
+
+        /* div {
+            background-color: aquamarine;
+            border: 1px saddlebrown solid;
+            padding: 10px;
+            margin: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            padding: auto;
+            margin: 5px;
+            border: 1px solid white;
+        }
+
+        ul {
+            display: inline-block;
+            list-style-type: none;
+        }
+
+        li {
+            display: inline;
+            width: auto;
+            height: 100%;
+        }
+
+        a:hover {
+            background-color: blue;
+            color: pink;
+            border: 1px solid blueviolet;
+            border-radius: 10px;
+        } */
+
+        /* Creating Vertical Navigation Bar */
+
+        div {
+            background-color: aqua;
+            width: 100px;
+            height: 100%;
+            border: 1px solid black;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            display: block;
+            height: 100%;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Attribute Selectors */
+        p[title="abc"] {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="main">
+        <span>Move Here</span>
+        <div id="dlist">
+            <p>I am Open</p>
+        </div>
+    </div> -->
+    <div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
+    <p title="abc"> Hello World 1 </p>
+    <p title="xyz"> Hello World 2</p>
+</body>
+
+</html>
