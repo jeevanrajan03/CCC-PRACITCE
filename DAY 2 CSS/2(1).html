@@ -1,0 +1,149 @@
+<!-- DAY 3 CSS CCC TRAINING -->
+
+<!-- The default overflow value is visible, if overflow occurs it is explicitily visible -->
+<!-- CSS DISPLAY PROPERTY -->
+<!-- https://www.w3schools.com/cssref/pr_class_display.php -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS EXAMPLES 2</title>
+    <style>
+        div {
+            border: 3px solid red;
+            margin: 15px;
+            padding: 5px;
+            width: 500px;
+            height: 200px;
+
+        }
+
+        /* By Default the display will be inline we can override using display property */
+        .abc {
+            border: 3px solid brown;
+            /* Using list-style-type we can give any type of bulletins even none. */
+            list-style-type: none;
+            display: inline-block;
+            /* The div tag can be moved any where in the screen using position tag */
+            /* This property contains values such as static, relative, fixed, sticky and extra */
+            /* 
+            relative - It can be moved anywhere
+            fixed - the div cannot move even if the screen scrolled, with document view point
+            absolute - it has container view point where we move inside the containers
+            */
+            position: relative;
+            bottom: 20px;
+            height: 100px;
+            width: 200px;
+
+
+            li {
+                /* This property considers all the element in one block */
+                /* You can also specify flex which is same as block */
+                display: inline;
+            }
+        }
+
+        /* Positioning image and text inside a container */
+        #test {
+            height: 200px;
+            width: 200px;
+            position: relative;
+
+            img {
+                height: 100px;
+                width: 100px;
+                /* opacity is the stying property which is used to reduce the darkness of any element */
+                opacity: 0.5;
+            }
+
+            p {
+                position: absolute;
+                top: 20px;
+            }
+        }
+
+        #hid {
+            /* This makes the element visibility as hidden, the element will not be added to the document */
+            /* 
+            The same can be done by visibility: hidden but the element is added to the document
+            visibility: hidden;
+             */
+            display: none;
+        }
+
+        /* To avoid overflow we can use the property overflow which as many function like scrolling */
+        #over {
+            overflow: auto;
+        }
+
+        /* Relative Width and height to the images */
+        #pic {
+            height: 100px;
+            width: 100px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS WORLD</h1>
+    <div>
+        <h1>
+            Hello World
+        </h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus facilis quos quae, autem deserunt sed,
+            quidem aliquam tempora, amet animi illum quisquam itaque repellendus maiores.</p>
+    </div>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti doloremque neque quod beatae nobis debitis
+            blanditiis repudiandae veniam quam id.</p>
+    </div>
+    <div class="abc">
+        <ul>
+            <li> <a href="#">One</a> </li>
+            <li> <a href="#">Two</a> </li>
+            <li> <a href="#">Three</a> </li>
+        </ul>
+    </div>
+    <div id="test">
+        <img src="peacock.jpeg" alt="peacock image">
+        <p> Example with Image</p>
+    </div>
+    <p id="hid"> This is Jeevan</p>
+    <div id="over">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas perspiciatis vero incidunt cumque tenetur
+            voluptate! Iusto doloremque consectetur praesentium at natus ipsa numquam impedit laudantium totam minima,
+            explicabo, facilis deleniti non beatae cum fuga suscipit? Dolore quisquam pariatur distinctio, corporis
+            repellendus fuga. Praesentium animi incidunt quas, mollitia cumque autem maiores sapiente dolores omnis ea
+            quaerat ad vero eos a libero voluptates modi reprehenderit doloribus maxime laborum consequatur est amet
+            neque? Repudiandae soluta vel corrupti a tempora velit ab vitae nulla quibusdam recusandae explicabo, saepe
+            labore ea mollitia autem provident asperiores sed neque nostrum laborum molestiae et, error fugiat. Soluta
+            veniam possimus repellendus repellat, praesentium iure tenetur perspiciatis quasi. Sequi numquam, excepturi
+            esse quos quia mollitia ea quaerat deleniti quae distinctio dignissimos doloribus ex dolor in ratione a iste
+            deserunt nobis harum saepe. Quis sunt aliquam similique. Fugiat dolores at optio, veniam aliquid voluptatum
+            amet asperiores rerum libero tempora dolor. Id, enim quia quae, adipisci nostrum vero eligendi in alias
+            dolores quibusdam fuga earum ipsa deleniti porro accusantium iure atque nobis, veniam autem minima nesciunt.
+            Dolorum hic, accusantium officiis libero est dolores amet, cum fugiat ad optio impedit incidunt totam
+            quaerat commodi voluptatibus reiciendis ipsa, dolore omnis? Dolore enim labore vel obcaecati similique
+            aliquam velit non illo voluptatibus, illum magni reiciendis. Illo harum rerum eaque, molestias corrupti eum
+            et quaerat reiciendis sit dicta vero recusandae libero, nostrum, fugit deleniti quos voluptas. Eaque
+            excepturi ipsam, sunt earum magni fuga sapiente recusandae molestiae delectus dicta esse animi harum saepe,
+            omnis quod natus hic nobis necessitatibus accusamus suscipit! Nobis perspiciatis a eos voluptates libero,
+            iure ducimus fuga officia repudiandae saepe! Minima eligendi, reiciendis culpa, dolorem excepturi cumque
+            architecto deserunt maiores animi eius obcaecati! Omnis ratione repudiandae vero officia ad non debitis
+            reprehenderit eaque numquam, veniam a magni minus ab iusto corrupti laborum eum! Modi.++</p>
+    </div>
+    <div id="pic">
+        <img src="peacock.jpeg" alt="peacock">
+    </div>
+</body>
+
+</html>
