@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP REQUEST</title>
+</head>
+
+<body>
+    <button onclick="getData()">Click Me</button>
+    <button onclick="postData()">Click Me Post</button>
+    <p id="a"></p>
+    <style>
+        table,
+        tr,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function getData() {
+            const http = new XMLHttpRequest();
+            http.onload = function () {
+                const response = JSON.parse(this.responseText);
+                let txt = "<table>";
+                response.forEach(element => {
+                    txt += "<tr>";
+                    for (let key in element) {
+                        txt += "<td>" + element[key] + "</td>";
+                    }
+                    txt += "</tr>";
+                });
+                txt += "</table>";
+                document.getElementById('a').innerHTML = txt;
+            }
+            http.open("GET", "http://localhost:3000/students", true);
+            http.send();
+        }
+
+        function postData() {
+            const obj = {
+                "name": "Rahul",
+                "Roll": 310621205038,
+                "marks": 98
+            }
+            const http = new XMLHttpRequest();
+            http.open("POST", "http://localhost:3000/students")
+            http.onload = function () {
+                if (is.status == 201)
+                    document.getElementById("a").innerHTML == "Data Posted"
+            }
+            http.send(JSON.stringify(obj))
+        }
+    </script>
+</body>
+
+</html>

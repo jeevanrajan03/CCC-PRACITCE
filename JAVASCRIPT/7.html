@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- While working with json you have to create the object first then create hhtp request and send the data -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Example JSON string
+        const txt = `{
+            "name": "Jeevan",
+            "regno": 310621205038,
+            "date": "new Date('2023-07-06')"
+        }`;
+
+        // Parsing JSON string into an object
+        const obj = JSON.parse(txt);
+
+        // Evaluating the "date" property if it exists
+        for (let key in obj) {
+            if (key === "date") {
+                obj[key] = eval(obj[key]); // Evaluate the string to get a Date object
+            }
+            console.log(key + ": " + obj[key]); // Logging key-value pairs
+        }
+
+        // Example object with a method (function)
+        const obj1 = {
+            "Name": "Jeevan",
+            dis: function () {
+                return this.Name + " Hello World";
+            }
+        };
+
+        // Trying to stringify obj1 (Note: Functions are not stringifiable)
+        try {
+            console.log(JSON.stringify(obj1)); // Throws TypeError
+        } catch (e) {
+            console.error("Error stringifying obj1:", e);
+        }
+
+        // Object with a string representation of a function
+        const obj2 = {
+            "Name": "Jeevan",
+            "dis": "function(){ return this.Name + ' Hello World'; }"
+        };
+
+        // Evaluating and assigning the function from obj2["dis"] using eval()
+        obj["dis"] = eval("(" + obj2["dis"] + ")");
+
+        // Logging properties of obj2
+        console.log(obj2.Name); // Output: Jeevan
+        console.log(obj2.dis); // Output: function(){ return this.Name + ' Hello World'; }
+        console.log(typeof obj2.dis); // Output: string (because obj2.dis is a string)
+    </script>
+</body>
+
+</html>

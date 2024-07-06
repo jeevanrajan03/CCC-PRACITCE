@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+</head>
+
+<body>
+    <script>
+        // Property of one function is used by other function
+        const xyz = {
+            rollno: 0,
+            fun: function () {
+                document.write("Hello World" + this.name + " " + this.rollno + '<br>'); //Here rollno is not a property in any function so it'll return undefined
+            }
+        }
+
+        const student1 = {
+            name: " Rajesh"
+        }
+
+        const student2 = {
+            name: " Selvi"
+        }
+        xyz.fun.call(student2) //In call we can pass additional arguments
+
+
+        // Similarily we can use apply
+        // bind will return the value by binding the function
+        // bind as to be called by a variable and it should be called
+        // call and apply are directly invoking the function
+        xyz.fun.apply(student2)
+        const x = xyz.fun.bind(student1)
+        x();
+
+
+        // CallBack
+        // Callbacks are used in async and promises
+        function fun1(x, y, callback) {
+            callback(x * y);
+        }
+
+        fun1(20, 40, (a) => { console.log(a) });
+
+        const obj = {
+            name: "Mahesh", age: 20,
+        }
+        // Handling request and response are called APIs
+        // This will be taking a call back function first and time
+        // This settimeout will wait for 3000 ms
+        // as js is async this will be in waiting state and as this is in waiting state the control goes to the next thing
+        setTimeout(() => {
+            obj.id = 30;
+            fun12(); //This function will output after 3000ms
+        }, 3000)
+        // JavaScript environment is Asynchoronous
+        // Using square bracket you can give only positive values not negative values
+        function fun12() {
+            console.log(obj.id)
+        }
+
+        const a = ['abc', { name: 'Jeevan', age: 20 }, new Date('2003-11-28')] //This is the literal for array
+        txt = ""
+        a.forEach(display)
+        function display(value, index, array) {
+            txt += " at Index" + index + " value " + value + '<br>'
+        }
+        document.write(txt)
+
+        const b = new Array(40) //Giving size to the array
+        console.log(a)
+        console.log(b)
+
+
+        const abc = ['abc', 'xyz', 'mno']
+        console.log(abc.at(1)) //Displays the element at the index position
+        console.log(abc.sort()) //Sort will work with same datatypes
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+    "students": [
+        {
+            "name": "Jeevan",
+            "rollno": 1,
+            "Marks": 600,
+            "id": "62f7"
+        },
+        {
+            "name": "Suman",
+            "rollno": 2,
+            "Marks": 50,
+            "id": "ecb7"
+        },
+        {
+            "name": "Rajan",
+            "rollno": 3,
+            "marks": 640,
+            "id": "4e5d"
+        },
+        {
+            "name": "Raj",
+            "rollno": 4,
+            "marks": 640,
+            "id": "4e6d"
+        }
+    ]
+}
