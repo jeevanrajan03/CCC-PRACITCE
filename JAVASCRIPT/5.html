@@ -1,0 +1,324 @@
+<!-- DAY 5 CC TRAINING JAVASCRIPT -->
+<!-- const can make the reference alone constant not the object -->
+<!-- 
+DATATYPES IN JAVASCRIPT - PRIMITIVE TYPES
+1. Number
+2. String
+3. Boolean
+4. Null
+5. BigInt
+6. Symbol
+7. Object
+8. Undefined
+  -->
+
+<!-- HOSTING: In JavaScript, hoisting refers to the built-in behavior of the language through which declarations of functions, variables, and classes are moved to the top of their scope – all before code execution.  -->
+<!-- let and const having block scope which don't allow redeclaration and doesn't support hoisting -->
+<!-- var having global scope which allow redeclaration and support hoisting -->
+<!-- NAND refers to not a number but not is a number type -->
+
+
+<!-- 
+Three ways of calling function
+1.  Using fucntion call
+2. function calling itself using paranthesis
+3. function calling in html8
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    <h1 id="abc">Welcome</h1>
+    <button onclick="fun()">Click Me</button>
+    <h1 id="xyz"></h1>
+    <h1 id="add"></h1>
+    <h1 id="cde"></h1>
+    <h1 id="mno"></h1>
+    <p id="bc"></p>
+    <script>
+        // Scope of variables
+        // let is having block scope
+        // Redeclaration is not possible while using scopes with let
+        // Global Variable
+        console.log('Output using let')
+        // if we console anything before initializing it will output error i.e, it throw error when we using let
+        // console.log(x)
+        let x = 10
+        {
+            // Local Variable
+            let x = 20
+            console.log(x)
+        }
+        console.log(x)
+
+        // Redeclaration is possible while using scopes with var
+        // var is having global scope
+        //w3c doesn't recommend to use var due to integrity problem.
+        console.log('Output using var')
+        // if we console anything before initializing it will output as undefined i.e, it doesn't throw error when weusing var
+        console.log(y)
+        var y = 10
+        {
+            var y = 20
+            console.log(y)
+        }
+        console.log(y)
+
+        // FUNCTIONS
+        // SYNTAX:
+        // function <fname>(parameters) {
+        // .
+        // .
+        // }
+
+
+        //function declaration
+        function fun() {
+            document.getElementById("abc").innerHTML = "HELLO WORLD"
+        } //not passing any arguments
+
+        //function calling
+        //you can call the function even before the declaration of the function which is known as code hoisting
+        //fun()
+
+
+        // Self Calling function
+        (function hello() {
+            document.getElementById("xyz").innerHTML = "Hello!!"; // I will invoke myself
+        })();
+
+
+
+        // Functions with arguments
+        function add(x, y) {
+            return x + y
+        }
+        let res = add(10, 20)
+        document.getElementById('add').innerHTML = res;
+
+        // Default Arguments
+        // function add(x, y=100) {
+        // return x + y
+        // }
+        // let res = add(10)
+        // document.getElementById('add').innerHTML = res;
+
+        // function keyword will return function itself
+        // Here also we are having call be value and call by reference which is used with the help of objects
+        // CALL BE VALUE - The modification does not affect the actual argument
+        let a = 10
+        const incby10 = function (x) {
+            x += 10
+            console.log(x)
+        }
+        incby10(x)
+        console.log(x)
+
+        document.getElementById('abc').innerHTML = " " + incby10 //This will display the function itself if we forgot to give the paranthesis along with the function name, since function will return function itself
+        // To avoid this we can store the whole function inside a variable
+
+        // This is called anonymous function
+        let u = 10;
+        const abc = function (x) {
+            x += 10
+            return x
+        }
+        document.getElementById('xyz').innerHTML = " " + abc(u);
+
+        // To reduce typing we can use => (Arrow functions) instead of typing function keyword
+        // Example:
+        // const fun=(x)=>{
+        // console.log('Arrow Function')
+        // }
+
+
+        // Passing multiple arguments
+        function fun(...args) {
+            let text = ""
+            // don't initialize i as zero since we are using it inside the function
+            for (let i of args) {
+                text += " " + i
+            }
+            return text
+        }
+        document.getElementById("cde").innerHTML += " " + fun(20, 21, 22, 23, 25);
+
+        // OBJECTS
+        // IN JAVASCRIPT THE OBJECT IS A KEY VALUE PAIR
+        // OBJECT CAN BE CREATED IN THREE WORDS
+        // 1. using literal
+        // 2. using new keywords
+        // 3. using constructor function
+        // objects are written in the curly braces
+
+        // These are creating objects using literals
+        const obj = {
+            fname: "Jeevan",
+            lname: "Rajan",
+            age: 20,
+        }
+        // This is one of the method of accessing the object using the dot operator (.)
+        document.getElementById("mno").innerHTML += " " + obj.fname + " " + obj.lname + " " + obj.age;
+        // This is another method of accessing the object  using the square braces([])
+        document.getElementById("mno").innerHTML += " " + obj['fname'] + " " + obj['lname'] + " " + obj['age']
+        // The tags are recognized only inside the documents and innerHTML but not recognized in the console
+        // In JavaScript the curly braces is also a object
+        // Paranthesis followed by a curly braces is called function (){}
+        // Calling the object using for
+        text = ""
+        for (let i in obj) {
+            text += "<br>" + " " + i + " " + obj[i] + " " + '<br>'
+        }
+        document.getElementById("mno").innerHTML += text
+
+        // Creating objects using new keyword
+        const d = new Object();
+        // Adding properties 
+        d.a = 10;
+        d.b = 20;
+        // Primitive data types are immutable
+        // Objects are mutable
+        document.getElementById("mno").innerHTML += JSON.stringify(d) //This is the technique of displaying the key value pairs
+
+
+        const m = {
+            fname: "Jeevan",
+            lname: "Rajan",
+            display: function () {
+                return this.fname + " " + this.lname;
+            }
+        }
+        document.getElementById("mno").innerHTML += '<br>' + m.display() //without paranthesis it will output the function not the output so paranthesis is must
+
+        const rect = {
+            height: 0,
+            width: 0,
+            setter: function (x, y) {
+                this.height = x;
+                this.width = y;
+            },
+            getter: function () {
+                return "Height : " + this.height + " Width : " + this.width
+            }
+
+
+        }
+
+        rect.area = function () {
+            return this.height * this.width;
+        }
+        rect.setter(10, 30)
+        document.getElementById("mno").innerHTML += "<br>" + rect.getter() + " The Area is :" + rect.area()
+
+
+
+        // Creating objects using constructor functions
+        function rect1() {
+            this.height = 10;
+            this.width = 20;
+            this.area = function () {
+                return this.height * this.width;
+            }
+        }
+
+        const obje = new rect1() //constructor function
+
+        document.getElementById("mno").innerHTML += "<br>" + "Height : " + obje.height + " ";
+        document.getElementById("mno").innerHTML += "Width : " + obje.width + " ";
+        document.getElementById("mno").innerHTML += "Area : " + obje.area() + " ";
+
+        function square() {
+            this.side = 10;
+            this.area = function () {
+                return this.side ** 2;
+            }
+        }
+
+
+        // to initialize a new property use 'prototype' to initialize it
+        square.prototype.e = 10;
+        // alert(square.e);
+        // the function square is initialized in the constant obj so that we can call it easily
+        const dba = new square();
+        // after initializing a new property the property can be printed after using the constructor
+        console.log(dba.e);
+        document.getElementById("bc").innerHTML += "<br\>" + "Side of the square : " + dba.side;
+        document.getElementById("bc").innerHTML += "<br\>" + "Area of the square : " + dba.area();
+        // in the above line, if we don't use '()' paranthesis, it will display the whole function its
+
+
+        const obj2 = {
+            fname: "Siva",
+            lname: "Kumar",
+            personal: {
+                height1: 5.9,
+                weight: 67,
+            }
+        }
+        document.write(obj2.personal.height1)
+        document.write(" " + obj2["personal"]["weight"]);
+
+        // Difference between array and object
+        // the array will have Number as Index
+        // the object will have name as index
+        const ab = ['Rama', 30, true, 30.50]
+        for (let i of ab) console.log(i)
+        //const xy = Object.keys(ab)
+        const xy = Object.defineProperty(obj, "age", { value: 30 }) //updates the values of the existing property this is applicable for single property
+        // To apply for multiple properties we can use object.defineProperties
+        const xy2 = Object.defineProperties(obj, { age: { value: 30 }, gender: { value: "Male" } })
+        document.getElementById('mno').innerHTML += obj.age + " " + obj.gender
+
+        // Entries
+        const xya = Object.entries(obj)
+        document.getElementById('mno').innerHTML = JSON.stringify(xya)
+
+        // Array of Arrays EVERY INNER ELEMENT HAVE KEY VALUE PROPERTY
+        const rect12 = [["Width", 10], ["Height", "30"]]
+        const xyab = Object.fromEntries(rect12)
+        document.getElementById('mno').innerHTML += JSON.stringify(xyab)
+
+        // The two objects are added and assigned into one Object
+        const obje1 = { name: "Jeevan", sal: 100000 }
+        const obje2 = { age: 20, gender: 'Male' }
+        Object.assign(obje1, obje2)
+        alert(JSON.stringify(obje1))
+
+        // toString method
+        let xyabc = 10
+        console.log(xyabc.toString(2)) //return binary
+        console.log(xyabc.toString(8)) //return octal
+        console.log(xyabc.toString(16)) //return hexadecimal
+
+        // Infinity
+        let uv = 2 / 0
+        let vu = -2 / 0
+        console.log(uv + ' ' + vu)
+
+
+        // BIG INTEGER CAN BE INITIALIZED BY PLACING n AT THE LAST and USING BigInt CONSTRUCTOR
+        // Number and BitInt can't be used together due to precision change
+        bed = 999999999999n
+        deb = BigInt(100000000000000007887)
+        console.log(x + ' ' + typeof (x))
+        console.log(y + ' ' + typeof (y))
+
+        let bgm = 10;
+        let mgb = 20;
+        let i = "SRM"
+        let j = 'EEC'
+        let k = `RAMAPURAM` //Backtick can be used for multiline String. These are also called as TEMPLATE STRING
+        let h = `it's a dog` //Using backtick we can give quotes which will be displayed in the document with no error as we are using backtick
+        console.log(h)
+        console.log(i + " " + j + " " + k)
+    </script>
+</body>
+
+</html>

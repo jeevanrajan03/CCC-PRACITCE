@@ -1,0 +1,107 @@
+<!-- DAY 4 CCC TRAINING JAVA SCRIPT -->
+<!-- To Include the Script we have to use <script> tag or <link> tag -->
+<!-- To output things we can use console.log which will display the output in the console -->
+<!-- We can also use alert, which will give a pop up in the page -->
+<!-- Using InnerHTML we can access the element and see the dispaly in the Document Itself -->
+<!-- In javascript we can do validation where we use alert -->
+<!-- Using of semicolon (;) is optional -->
+<!-- Javascript is almost similar to python -->
+<!-- In javascript we are having a concept called hosting, which can be done using var (Global Scope) -->
+<!-- w3c Always recommend to use either let or const -->
+<!-- Same arithmetic operators like python are used in js also -->
+<!-- let can used to change the values but it doesnt change the original value -->
+<!-- Javascript accepts (+) in strings also -->
+<!-- To use MultiLine String we can use backTick(``)  -->
+<!-- === & !== is absolute comparison operator which checks all aspects of the value like datatype, number -->
+<!-- DataTypes in JavaScript: Number, String, Boolean, Undefined, Array, Objects, Symbols and NULL, Big Integer -->
+<!-- There are two special operators in javascript: Typeof and instanceof -->
+<!-- This is provided by ES6 which means it is executed in browser not like java python which runs in interpreter and compiler -->
+<!-- node is providing runtime environment for java -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Example</title>
+
+</head>
+
+<body>
+    <h1 id="abc"></h1>
+    <script>
+        // Using alert to print Hello World
+        alert('Hello World')
+        // Using console.log to print Hello World, Console can be viewed inside the inspect (Shortcut: F12)
+        console.log('Hello World')
+        //Display Text using innerHTML, to use innerHTML we have to use document which contains element
+        // The content can be accessed by using value
+        document.getElementById('abc').innerHTML = "Hello World"
+        // For declaring variable there are 4 ways
+        // 1. Automatic
+        x = 10 //This variable is having global scope
+        document.getElementById('abc').innerHTML = x
+        // 2. Using var, var is also having global scope
+        var y = "Hello World Using var"
+        document.getElementById('abc').innerHTML = y
+        // we can use concatenation by using (+) symbol among two variables
+        document.getElementById('abc').innerHTML = x + " " + y
+
+        // BITWISE OPERATORS
+        // document.write is used to override the existing document
+        // Expressions must given inside parantheses
+        let a = 10, b = 12
+        document.write('<p>' + (a & b) + '</p>')
+        document.write('<p>' + (a | b) + '</p>')
+        document.write('<p>' + (a ^ b) + '</p>')
+        document.write('<p>' + (~a) + '</p>')
+
+
+        // Leap Year Program
+        // Prompt is used to get input from the user
+        let c = prompt("Enter a Year:")
+        let d = (c % 400 == 0 || (c % 100 != 0 && c % 4 == 0))
+        // Ternary Operator
+        let abc = d != false ? 'Leap Year' : 'Not a Leap Year'
+        document.write(abc)
+
+        // Control Structure
+        // Simple If, else if, else if ladder, nested if
+        // loop: for, while, do while, switch, break, continue
+        let xy = prompt('Enter a value')
+        if (x % 2 == 0) console.log('Even Integer')
+        else console.log('Odd Integer')
+        console.log('For Loop')
+
+        // For Loop
+        // loop control variable cannot be a const use only let
+        for (let i = 0; i < 5; i++) console.log(i)
+
+        // While Loop
+        let j = 0
+        console.log('While Loop')
+        while (j < 5) {
+            console.log(j)
+            j++
+        }
+
+        // Read marks of a student and print the grade using else if ladder
+        let marks = prompt('Enter Marks:')
+        if (marks > 75 && marks <= 100) console.log('A')
+        else if (marks > 65 && marks <= 74) console.log('B')
+        else if (marks > 50 && marks <= 64) console.log('C')
+        else if (marks >= 1 && marks < 50) console.log('D')
+        else console.log('INVALID')
+
+
+        // Take a number and print all the factors of it
+        let fact = prompt("Enter number to print factor")
+        document.write('<br>')
+        for (let i = 1; i < fact; i++) {
+            if (fact % i == 0) document.write('<p>' + i + ' ' + '</p>')
+        }
+    </script>
+</body>
+
+</html>
