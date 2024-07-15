@@ -1,0 +1,303 @@
+<!-- If we use strict mode, the javascript will be set to strict rules which is already proposed -->
+<!-- Use Strict Mode -->
+<!-- For example, we hae to captilize the first letter of the class name if we use strict mode, the strict mode is default in react -->
+<!-- CLASSES -->
+<!-- Private identifiers cannot be accessed outside the class -->
+<!-- Javascript supports inheritence but there is no overridding and overloading concepts -->
+<!-- Inheritence is same like java where we can use super keyword -->
+<!-- To create Endpoints we have to run command: json-server -w <Relative Path of the json file> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+
+<body>
+    <p>Employee</p>
+    <button onclick="getData()">Get Details</button>
+    <button onclick="postData()">Post Details</button>
+    <p id="1"></p>
+
+    <p>Teacher</p>
+    <button onclick="getData1()">Get Details</button>
+    <button onclick="postData1()">Post Details</button>
+    <p id="4"></p>
+    <h1 class="a">Hello World 1</h1>
+    <p id="3" class="a">Hello World 2</p>
+    <h1>Hello World 3</h1>
+
+    <!-- Mouse Events -->
+    <!-- <img src="peacock.jpeg" id="5" style="width: 400px; height: 500px;" onmouseenter="fun20()" onmouseleave="fun21()"
+        onmousedown="fun22()" /> -->
+
+    <!-- EventListeners -->
+    <div id="6" style="height: 30px; width: 100px; padding: 10px; border: 1px solid black; background-color: aqua;">
+        <p>Hello World</p>
+
+
+    </div>
+
+    <!-- Keyboard Listeners -->
+    <div style="padding: 10px;">
+        <input tpye="text" id="7">
+    </div>
+
+    <!-- Forms Handling -->
+    <div>
+        <form id="form" onsubmit="fun123()">
+            <label for="user">User Name</label>
+            <input type="text" name="user">
+            <label for="pwd">Password</label>
+            <input type="password" name="pwd">
+            <input type="submit" value="submit">
+    </div>
+    </form>
+    <script>
+
+
+        // Forms Handlers
+        // function fun123() {
+        //     e.preventDefault(); //When we are clicking the control goes to next page using this we are controlling it
+        //     const xy = document.forms['form']
+        //     console.log(xy)
+        // }
+        // Mouse listeners
+        function fun20() {
+            const x = document.getElementById("5");
+            x.style.width = '450px';
+            x.style.height = '350px';
+        }
+
+        function fun21() {
+            const x = document.getElementById("5");
+            x.style.width = '400px';
+            x.style.height = '500px';
+        }
+
+        function fun22() {
+            const x = document.getElementById("5");
+            x.style.width = '480px';
+            x.style.height = '380px';
+        }
+
+        // AddEventListeners
+        const z = document.getElementById('6');
+        z.addEventListener('mouseenter', (e) => { z.style.backgroundColor = "green" });
+        z.addEventListener('mouseleave', (e) => { z.style.backgroundColor = "red" });
+        z.addEventListener('mousedown', (e) => { z.style.backgroundColor = "brown" });
+        z.addEventListener('mouseup', (e) => { z.style.backgroundColor = "yellow" });
+
+        // Keyboard Listeners
+        const w = document.getElementById('7')
+        w.addEventListener('keypress', (e) => { console.log(w.value) })
+        class abc {
+            // Declaring a simple Constructor 
+            constructor() {
+                console.log('Hello World')
+            }
+        }
+        // The alert message will be displayed if we call the object simply
+        const obj = new abc()
+
+
+        // Class using properties and values
+        class person {
+            constructor(name, reg) {
+                this.name = name
+                this.reg = reg
+            }
+            display() {
+                return this.name + " " + this.reg
+            }
+
+            get getName() {
+                return this.name + " " + this.reg
+            }
+
+            set setName(name) {
+                this.name = name
+            }
+        }
+        const obj1 = new person("Jeevan", "38")
+        // This will display the key value pairs with the class name, This is printing the object properties
+        // if we want to print the property alone we have to use dot (.) operator console.log(obj1.name) -> this will print only the name not the whole object
+        console.log(obj1)
+        // Displaying the property using method
+        console.log(obj1.display())
+        // Dispalying the property using get.
+        console.log(obj1.getName)
+        // setting the name using set method and displaying it.
+        obj1.setName = "Rajan"
+        console.log(obj1.getName)
+        // GETTER AND SETTER
+        // We write class to bind the methods which is encapsulation
+        // Using setter and getter method we can play with the cariables inside the class
+        // Use # to set the property as private member which can't be accessed outside.
+        // These are may be a method but we will be using it as variable
+        // For get or set we don't want to use paranthesis which take or sets the values.
+
+
+        // Inheritence
+        // extends can be used for the concept of inheritence
+        class A {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        class B extends A {
+            constructor(name, reg) {
+                super(name)
+                this.reg = reg
+            }
+        }
+
+        const obj2 = new B("Jeevan Rajan", "310621205038")
+        console.log(obj2)
+
+
+        // Promises
+        // Promises concepts are used in synchronisation, generally js is a async programming
+        // Creating Object for Promise Class
+        const p = new Promise(function (success, fail) {
+            let x = 50
+            if (x % 2 == 0) {
+                success("Given Input is Even")
+            }
+            else {
+                fail("Given Input is Odd")
+            }
+        });
+
+        // Then includes both success and fail
+        // success displays even whereas fail displays odd
+        p.then(
+            function (value) {
+                console.log(value)
+            },
+            function (error) {
+                console.log(error)
+            },
+        );
+
+        // Always async function will return a Promise
+        async function fun() {
+            return new Promise(function (success, fail) {
+                let x = 13, f = 0;
+                for (let i = 1; i <= x; i++) {
+                    if (x % i == 0) f++
+
+                }
+                if (f == 2) success("Prime")
+                else fail("Non Prime")
+            })
+        }
+
+        const a = fun();
+        a.then(
+            function (value) {
+                console.log(value);
+            },
+            function (error) {
+                console.log(error);
+            }
+        )
+        // Using json file and knowing the status of the file
+        // Displaying the statuses of the data(Json)
+        // GET
+        async function getData() {
+            // Fetching the data from the endpoints using fetch keyword
+            const data = await fetch("http://localhost:3000/emp", { method: "GET" })
+            if (data.status == 200) {
+                // in - used to iterate over keys (It works like Index)
+                // of - used to iterate arrays (Access Array Members)
+                const a = await data.json()
+                text = "<table>"
+                for (let i of a) {
+                    text += "<tr>"
+                    text += "<td>" + i.name + "</td>"
+                    text += "<td>" + i.Role + "</td>"
+                    text += "</tr>"
+                }
+                text += "</table>"
+                document.getElementById('1').innerHTML = text;
+            }
+        }
+
+
+        // POST
+        async function postData() {
+            const obj3 = { name: "Rahul", Role: "Git", Salary: "250000" }
+            const data = await fetch("http://localhost:3000/emp",
+                {
+                    method: "POST",
+                    body: JSON.stringify(obj3),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            console.log(data)
+        }
+
+
+        async function getData1() {
+            // Fetching the data from the endpoints using fetch keyword
+            const data = await fetch("http://localhost:3000/Teacher", { method: "GET" })
+            if (data.status == 200) {
+                // in - used to iterate over keys (It works like Index)
+                // of - used to iterate arrays (Access Array Members)
+                const a = await data.json()
+                text = "<table>"
+                for (let i of a) {
+                    text += "<tr>"
+                    text += "<td>" + i.name + "</td>"
+                    text += "<td>" + i.Subject + "</td>"
+                    text += "</tr>"
+                }
+                text += "</table>"
+                document.getElementById('4').innerHTML = text;
+            }
+        }
+
+
+        // POST
+        async function postData1() {
+            const obj4 = { name: "Rahul", Subject: "Operating Systems" }
+            const data = await fetch("http://localhost:3000/Teacher",
+                {
+                    method: "POST",
+                    body: JSON.stringify(obj4),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            console.log(data)
+        }
+
+        // EVENT HANDLING WITH DOCUMENT OBJECT MODEL
+        // getElementById - this give only one element
+        // getElementsByClass - this will give array of elements with the class name
+        // getElementsByTag - this will give array of elements with the tag name
+
+        let m = document.getElementById('3').innerHTML;
+        //console.log(m)
+        let n = document.getElementsByTagName("h1");
+        for (let i of n) {
+            //console.log(i.innerHTML)
+        }
+        let o = document.getElementsByClassName("a")
+        for (let i of o) {
+            console.log(i.innerHTML)
+        }
+    </script>
+
+</body>
+
+<style>
+    table,
+    tr,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+</html>

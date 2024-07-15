@@ -1,0 +1,68 @@
+{
+  "emp": [
+    {
+      "name": "Jeevan",
+      "Role": "Flutter Developer",
+      "Salary": "2500000",
+      "id": "5fd0"
+    },
+    {
+      "name": "Mohan",
+      "Role": "Java Developer",
+      "Salary": "2500000",
+      "id": "28d0"
+    },
+    {
+      "name": "Kirthick Roshan",
+      "Role": "C Developer",
+      "Salary": "3500000",
+      "id": "8d11"
+    },
+    {
+      "name": "Benedict Sunny Paul",
+      "Role": "Python Developer",
+      "Salary": "4500000",
+      "id": "b800"
+    },
+    {
+      "id": "b81a",
+      "name": "Rahul",
+      "Role": "Git",
+      "Salary": "250000"
+    },
+    {
+      "id": "0076",
+      "name": "Rahul",
+      "Role": "Git",
+      "Salary": "250000"
+    },
+    {
+      "id": "fe88",
+      "name": "Rahul",
+      "Role": "Git",
+      "Salary": "250000"
+    }
+  ],
+  "Teacher": [
+    {
+      "name": "Hari Aditya",
+      "Subject": "Mathematics",
+      "id": "dbd7"
+    },
+    {
+      "name": "Imman Raj",
+      "Subject": "Science",
+      "id": "cd1c"
+    },
+    {
+      "name": "Bot Raj",
+      "Subject": "Social Science",
+      "id": "65cf"
+    },
+    {
+      "id": "85f9",
+      "name": "Rahul",
+      "Subject": "Operating Systems"
+    }
+  ]
+}
