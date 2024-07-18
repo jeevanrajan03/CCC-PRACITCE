@@ -16,11 +16,13 @@
 </head>
 
 <body>
+    <!-- Get Method and Post Method for Employee -->
     <p>Employee</p>
     <button onclick="getData()">Get Details</button>
     <button onclick="postData()">Post Details</button>
     <p id="1"></p>
 
+    <!-- Get Method and Post Method for Teacher -->
     <p>Teacher</p>
     <button onclick="getData1()">Get Details</button>
     <button onclick="postData1()">Post Details</button>
@@ -47,23 +49,45 @@
 
     <!-- Forms Handling -->
     <div>
-        <form id="form" onsubmit="fun123()">
-            <label for="user">User Name</label>
-            <input type="text" name="user">
-            <label for="pwd">Password</label>
-            <input type="password" name="pwd">
-            <input type="submit" value="submit">
+        <form id="form" onsubmit="fun123(event)">
+            <div>
+                <label for="user">User Name</label>
+                <input type="text" name="user" required="true">
+            </div>
+            <div>
+                <label for="pwd">Password</label>
+                <input type="password" name="pwd" required="true">
+            </div>
+            <div>
+                <input type="submit" value="submit">
+            </div>
+        </form>
     </div>
-    </form>
+    <p id="11"></p>
+
+
     <script>
 
+        // Destructuring 
+        const [t, u, v] = ["abc", "def", "xyz"]
+        console.log(t, u, v)
 
         // Forms Handlers
-        // function fun123() {
-        //     e.preventDefault(); //When we are clicking the control goes to next page using this we are controlling it
-        //     const xy = document.forms['form']
-        //     console.log(xy)
-        // }
+        function fun123(e) {
+            //When we are clicking the control goes to next page using this we are controlling it i.e the execution is done in the same page
+            e.preventDefault();
+            // creating a variable and storing the form document
+            const xy = document.forms['form']
+            // This will console the entire form
+            console.log(xy)
+            // This will console the tag used
+            console.log(xy.user)
+            // This will console the value of the field
+            console.log(xy.user.value)
+            // printing fields inside the document using innnerHTMl
+            document.getElementById('11').innerHTML = "Username: " + xy.user.value
+                + "<br>Password: " + xy.pwd.value
+        }
         // Mouse listeners
         function fun20() {
             const x = document.getElementById("5");

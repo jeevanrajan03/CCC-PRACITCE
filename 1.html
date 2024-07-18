@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Test</title>
+</head>
+
+<body>
+    <form id="a">
+        <div>
+            <label for="username">Username</label>
+            <input type="text" name="username">
+            <label for="pwd">Password</label>
+            <input type="password" name="pwd">
+            <button onclick="postData()">Submit</button>
+        </div>
+    </form>
+
+
+    <script>
+        async function getData() {
+            // Fetching the data from the endpoints using fetch keyword
+            const data = await fetch("http://localhost:3000/dummy", { method: "GET" })
+            if (data.status == 200) {
+                // in - used to iterate over keys (It works like Index)
+                // of - used to iterate arrays (Access Array Members)
+                const a = await data.json()
+                text = "<table>"
+                for (let i of a) {
+                    text += "<tr>"
+                    text += "<td>" + i.username + "</td>"
+                    text += "<td>" + i.password + "</td>"
+                    text += "</tr>"
+                }
+                text += "</table>"
+                document.getElementById('1').innerHTML = text;
+            }
+        }
+
+
+        // POST
+        async function postData() {
+            const obj3 = { username: "Rahul", password: "Git" }
+            const data = await fetch("http://localhost:3000/dummy",
+                {
+                    method: "POST",
+                    body: JSON.stringify(obj3),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+            console.log(data)
+        }
+    </script>
+</body>
+
+</html>

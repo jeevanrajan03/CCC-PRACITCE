@@ -1,0 +1,26 @@
+[
+    {
+        "_id": 502,
+        "name": "Mahesh",
+        "branch": "CSE",
+        "age": 20,
+        "marks": 70,
+        "DOB": "new Date('2003-05-18)"
+    },
+    {
+        "_id": 503,
+        "name": "Kumar",
+        "branch": "ECE",
+        "age": 21,
+        "marks": 50,
+        "DOB": "new Date('2003-05-19)"
+    },
+    {
+        "_id": 504,
+        "name": "Imman",
+        "branch": "EEE",
+        "age": 20,
+        "marks": 75,
+        "DOB": "new Date('2003-05-20)"
+    }
+]

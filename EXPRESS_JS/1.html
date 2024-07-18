@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee</title>
+</head>
+
+<body>
+    <div style="border: 3px solid black; background-color: aqua; width: 500px; height: 200px; margin: 10px;">
+        <form id="frm" method="post" onsubmit="fun(event)">
+            <div style="margin: 10px;">
+                <label for="name" style="margin:5px;">Name</label>
+                <input type="text" id="name" name="abc">
+            </div>
+            <div style="margin: 10px;">
+                <label for="age" style="margin:5px;">Age</label>
+                <input type="text" id="age" name="abc1">
+            </div>
+            <div style="margin: 10px;">
+                <label for="gender" style="margin:5px;">Gender</label>
+                <input type="text" id="gender" name="abc2">
+            </div>
+            <div style="margin: 10px;">
+                <label for="salary" style="margin:5px;">Salary</label>
+                <input type="text" id="salary" name="abc3">
+            </div>
+            <div>
+                <center><input type="submit" value="Submit"></center>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    async function fun(e) {
+        e.preventDefault();
+        const a = document.getElementById('name').value;
+        const b = document.getElementById('age').value;
+        const c = document.getElementById('gender').value;
+        const d = document.getElementById('salary').value;
+
+        const obj = {
+            name: a,
+            age: parseInt(b),  // Ensure age is an integer
+            gender: c,  // Keep gender as a string
+            salary: parseInt(d)  // Ensure salary is an integer
+        };
+
+        try {
+            const res = await fetch('http://localhost:5000/employee/add-emp', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            });
+
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const response = await res.json();
+            console.log(response);
+            alert('Employee added successfully');
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error adding employee');
+        }
+    }
+</script>
+
+</html>

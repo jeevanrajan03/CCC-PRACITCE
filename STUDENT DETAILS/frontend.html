@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+</head>
+
+<body>
+    <div style="border: 3px solid black; background-color: aqua; width: 500px; height: 200px; margin: 10px;">
+        <form id="frm" method="post" onsubmit="fun(event)">
+            <div style="margin: 10px;">
+                <label for="name" style="margin:5px;">Name</label>
+                <input type="text" id="name" name="abc">
+            </div>
+            <div style="margin: 10px;">
+                <label for="branch" style="margin:5px;">Branch</label>
+                <input type="text" id="branch" name="abc1">
+            </div>
+            <div style="margin: 10px;">
+                <label for="age" style="margin:5px;">Age</label>
+                <input type="text" id="age" name="abc2">
+            </div>
+            <div style="margin: 10px;">
+                <label for="marks" style="margin:5px;">Marks</label>
+                <input type="text" id="marks" name="abc3">
+            </div>
+            <div>
+                <center><input type="submit" value="Submit"></center>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    async function fun(e) {
+        e.preventDefault();
+        const a = document.getElementById('name').value;
+        const b = document.getElementById('branch').value;
+        const c = document.getElementById('age').value;
+        const d = document.getElementById('marks').value;
+
+        const obj = {
+            name: a,
+            branch: b,
+            age: parseInt(c),
+            marks: parseInt(d)
+        };
+        try {
+            const res = await fetch('http://localhost:5000/Student/add-student', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(obj)
+            })
+
+            const response = await res.json();
+            console.log(response)
+        }
+        catch (error) {
+            console.log(error)
+        }
+    }
+</script>
+
+</html>
